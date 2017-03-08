@@ -1,6 +1,7 @@
-(ns duct.database.sql)
+(ns duct.database.sql
+  (:require [integrant.core :as ig]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defrecord Boundary [spec])
+
+(defmethod ig/init-key :duct.database/sql [_ spec]
+  (->Boundary spec))
