@@ -15,7 +15,7 @@ For pooled connections, use [database.sql.hikaricp][].
 
 To install, add the following to your project `:dependencies`:
 
-    [duct/database.sql "0.1.0-SNAPSHOT"]
+    [duct/database.sql "0.1.0"]
 
 ## Usage
 
