@@ -23,6 +23,10 @@ This library provides two things: a `Boundary` record that holds a
 database spec, and a multimethod for `:duct.database/sql` that
 initiates a database spec into the `Boundary`.
 
+```edn
+{:duct.database/sql {:connection-uri "jdbc:sqlite:db/example.sqlite"}}
+```
+
 When you write functions against the database, consider using a
 protocol and extending the `Boundary` record. This will allow you to
 easily mock or stub out the database using a tool like [Shrubbery][].
