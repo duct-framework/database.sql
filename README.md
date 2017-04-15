@@ -1,5 +1,7 @@
 # Duct database.sql
 
+[![Build Status](https://travis-ci.org/duct-framework/database.sql.svg?branch=master)](https://travis-ci.org/duct-framework/database.sql)
+
 [Integrant][] methods for connecting to a SQL database from the
 [Duct][] framework.
 
