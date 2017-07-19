@@ -3,6 +3,9 @@
             [duct.database.sql :as sql]
             [integrant.core :as ig]))
 
+(deftest key-derive-test
+  (is (isa? :duct.database/sql :duct/database)))
+
 (deftest integrant-key-test
   (let [spec {:connection-uri "jdbc:sqlite:"}
         impl (:duct.database/sql (ig/init {:duct.database/sql spec}))]
