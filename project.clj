@@ -3,5 +3,5 @@
   :url "https://github.com/duct-framework/database.sql"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [integrant "0.3.3"]])
+  :dependencies [[org.clojure/clojure "1.11.4"]
+                 [integrant "0.13.1"]])
