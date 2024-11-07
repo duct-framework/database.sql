@@ -1,7 +1,8 @@
 (ns duct.database.sql
-  (:require [integrant.core :as ig]))
+  (:require [integrant.core :as ig]
+            [next.jdbc :as jdbc]))
 
-(defrecord Boundary [spec])
+(defrecord Boundary [datasource])
 
-(defmethod ig/init-key :duct.database/sql [_ spec]
-  (->Boundary spec))
+(defmethod ig/init-key :duct.database/sql [_ db-spec]
+  (->Boundary (jdbc/get-datasource db-spec)))

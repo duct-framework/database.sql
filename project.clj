@@ -4,4 +4,5 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.11.4"]
+                 [com.github.seancorfield/next.jdbc "1.3.955"]
                  [integrant "0.13.1"]])

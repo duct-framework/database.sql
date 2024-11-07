@@ -1,10 +1,10 @@
 (ns duct.database.sql-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is]]
             [duct.database.sql :as sql]
             [integrant.core :as ig]))
 
 (deftest integrant-key-test
-  (let [spec {:connection-uri "jdbc:sqlite:"}
+  (let [spec {:jdbcUrl "jdbc:sqlite:"}
         impl (:duct.database/sql (ig/init {:duct.database/sql spec}))]
     (is (instance? duct.database.sql.Boundary impl))
-    (is (= (:spec impl) spec))))
+    (is (instance? javax.sql.DataSource (:datasource impl)))))
