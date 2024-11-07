@@ -1,6 +1,5 @@
 # Duct database.sql [![Build Status](https://github.com/duct-framework/database.sql/actions/workflows/test.yml/badge.svg)](https://github.com/duct-framework/database.sql/actions/workflows/test.yml)
 
-
 [Integrant][] methods for connecting to a SQL database from the
 [Duct][] framework.
 
@@ -23,17 +22,22 @@ Or to your Leiningen project file:
 ## Usage
 
 This library provides two things: a `Boundary` record that holds a
-database spec, and a multimethod for `:duct.database/sql` that
-initiates a database spec into the `Boundary`.
+[DataSource][], and an `init-key` method for `:duct.database/sql` that
+creates that record.
+
+The key takes the same argument map as the `get-datasource` function
+from [next.jdbc][].
 
 ```edn
-{:duct.database/sql {:connection-uri "jdbc:sqlite:db/example.sqlite"}}
+{:duct.database/sql {:jdbcUrl "jdbc:sqlite:db/example.sqlite"}}
 ```
 
 When you write functions against the database, consider using a
 protocol and extending the `Boundary` record. This will allow you to
 easily mock or stub out the database using a tool like [Shrubbery][].
 
+[datasource]: https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html
+[next.jdbc]: https://github.com/seancorfield/next-jdbc
 [shrubbery]: https://github.com/bguthrie/shrubbery
 
 ## License
