@@ -21,19 +21,16 @@ Or to your Leiningen project file:
 
 ## Usage
 
-This library provides two things: a `Boundary` record that holds a
-[DataSource][], and an `init-key` method for `:duct.database/sql` that
-creates that record.
-
-The key takes the same argument map as the `get-datasource` function
-from [next.jdbc][].
+This library provides an `init-key` method for `:duct.database/sql` that
+creates a [DataSource][]. The key takes the same argument map as the
+`get-datasource` function from [next.jdbc][].
 
 ```edn
 {:duct.database/sql {:jdbcUrl "jdbc:sqlite:db/example.sqlite"}}
 ```
 
 When you write functions against the database, consider using a
-protocol and extending the `Boundary` record. This will allow you to
+protocol and extending the DataSource class. This will allow you to
 easily mock or stub out the database using a tool like [Shrubbery][].
 
 [datasource]: https://docs.oracle.com/en/java/javase/17/docs/api/java.sql/javax/sql/DataSource.html

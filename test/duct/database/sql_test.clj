@@ -6,5 +6,4 @@
 (deftest integrant-key-test
   (let [spec {:jdbcUrl "jdbc:sqlite:"}
         impl (:duct.database/sql (ig/init {:duct.database/sql spec}))]
-    (is (instance? duct.database.sql.Boundary impl))
-    (is (instance? javax.sql.DataSource (:datasource impl)))))
+    (is (instance? javax.sql.DataSource impl))))
