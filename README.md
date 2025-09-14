@@ -13,11 +13,11 @@ For pooled connections, use [database.sql.hikaricp][].
 
 Add the following dependency to your deps.edn file:
 
-    org.duct-framework/database.sql {:mvn/version "0.4.0"}
+    org.duct-framework/database.sql {:mvn/version "0.4.1"}
 
 Or to your Leiningen project file:
 
-    [org.duct-framework/database.sql "0.4.0"]
+    [org.duct-framework/database.sql "0.4.1"]
 
 ## Usage
 
